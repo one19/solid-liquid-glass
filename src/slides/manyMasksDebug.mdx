@@ -1,0 +1,25 @@
+import { LiquidGlassDisplay } from '../LiquidGlassDisplay';
+import { ManyMasksDebug } from '../ManyMasksDebug';
+import { Color } from '../Color';
+import Margin from '../Margin';
+
+# Layer guide
+
+- <Color color="red">Red (edge reflection):</Color> outer blur/glow that creates perceived thickness.
+- <Color color="orange">Orange (emboss reflection):</Color> sharper, shifted highlights that add perceived depth.
+- <Color color="green">Green (refraction):</Color> a thin band that simulates light bending at the glass edge.
+- <Color color="blue">Blue (blur):</Color> the softened, interior blur that diffuses the background.
+- <Color color="purple">Purple (blend layers):</Color> subtle blending/filtering that modulates color and saturation.
+- <Color color="yellow">Yellow (blend-edge):</Color> contrasty edge detail to separate glass from background.
+- <Color color="cyan">Cyan (highlight):</Color> final bright rim that reads as a specular highlight.
+
+<Margin />
+
+
+<LiquidGlassDisplay>
+  <ManyMasksDebug>
+    ## Debug
+
+    a lot of text on the inside to make the layers spread out
+  </ManyMasksDebug>
+</LiquidGlassDisplay>

@@ -1,0 +1,28 @@
+import Margin from '../Margin';
+
+# Displacement filters — shared DNA
+
+small SVG filter pattern to create organic distortion:
+
+- `feTurbulence` produces a noise field.
+- `feDisplacementMap` uses that noise to nudge pixels (scale controls strength).
+
+```svg
+<!-- simplified filter used by both components -->
+<filter id="glass-distortion">
+  <feTurbulence type="turbulence" baseFrequency="0.03" numOctaves="3" />
+  <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="10" />
+</filter>
+```
+
+Key patterns in the components
+
+- Performant(ish) `HiddenSVG` component and reuse the `url(#glass-distortion)` from any layer you want distorted.
+- Fun to tweak knobs:
+  - `baseFrequency` (detail)
+  - `numOctaves` (complexity)
+  - `scale` (strength)
+
+```jsx
+<div style={{ filter: 'url(#glass-distortion)' }} />
+```

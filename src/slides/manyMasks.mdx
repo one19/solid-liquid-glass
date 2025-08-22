@@ -1,0 +1,38 @@
+import Margin from '../Margin';
+
+### Why those choices?
+
+- Separate layers allow different filters per visual role
+  - soft blur for background
+  - stronger blur+color shifts for emboss,
+  - subtle bright highlights for edges.
+- Masks keep the inner content readable while letting visual artifacts (glow, refraction) sit just outside the content's edge.
+
+
+```css
+/* common technique used across layers */
+backdrop-filter: blur(var(--extra-blur)) brightness(1.25);
+mask: linear-gradient(white 0 0) padding-box, linear-gradient(white 0 0) content-box;
+mask-composite: exclude, exclude; /* carve out inner content area */
+```
+
+<Margin />
+```jsx
+  <GlassContainer>
+    <GlassContent>{children}</GlassContent>
+    <GlassMaterial>
+      <GlassEdgeReflection />
+      <GlassEmbossReflection />
+      <GlassRefraction />
+      <GlassBlur />
+      <BlendLayers />
+      <BlendEdge />
+      <Highlight />
+      {/* <Tint />
+      <Contrast />
+      <Brightness /> */}
+    </GlassMaterial>
+  </GlassContainer>
+```
+
+BUT HOLY WOW THAT'S A ZILLION LAYERS

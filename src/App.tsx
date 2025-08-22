@@ -1,6 +1,15 @@
 import { MDXProvider } from '@mdx-js/react';
-import Slide1 from './slides/testSlide.mdx';
-import Slide2 from './slides/testSlide2.mdx';
+import Intro from './slides/intro.mdx';
+import ManyMasks from './slides/manyMasks.mdx';
+import SvgDownFall from './slides/svgDownfall.mdx';
+import AnOkQuestion from './slides/anOkQuestion.mdx';
+import SvgDownFall2 from './slides/svgDownfall2.mdx';
+import SvgDownFall3 from './slides/svgDownfall3.mdx';
+import WhyLayerWorks from './slides/whyLayerWorks.mdx';
+import ManyMasksDebug from './slides/manyMasksDebug.mdx';
+import GoodLayerImplementation from './slides/layerButGood.mdx';
+import LayerImplementation from './slides/layerImplementation.mdx';
+import LayersImplementation from './slides/layersImplementation.mdx';
 import { Deck } from './Deck';
 import { mdxComponents } from './MDXComponents';
 
@@ -8,10 +17,17 @@ const App = () => (
   <MDXProvider components={mdxComponents}>
     <Deck
       slides={[
-        <Slide1 key="1" />,
-        <Slide2 key="2" />,
-        // more slides to come!
-        // TODO: support [<asides>, syntax]
+        <Intro key="0" />,
+        <LayerImplementation key="1" />,
+        <GoodLayerImplementation key="2" />,
+        <WhyLayerWorks key="3" />,
+        <SvgDownFall key="4" />,
+        <SvgDownFall2 key="5" />,
+        <SvgDownFall3 key="6" />,
+        <LayersImplementation key="7" />,
+        <ManyMasks key="8" />,
+        <ManyMasksDebug key="9" />,
+        <AnOkQuestion key="10" />,
       ]}
     />
   </MDXProvider>
