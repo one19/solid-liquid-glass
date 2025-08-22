@@ -1,5 +1,6 @@
 import { MDXProvider } from '@mdx-js/react';
 import Intro from './slides/intro.mdx';
+import Sources from './slides/sources.mdx';
 import ManyMasks from './slides/manyMasks.mdx';
 import SvgDownFall from './slides/svgDownfall.mdx';
 import AnOkQuestion from './slides/anOkQuestion.mdx';
@@ -27,7 +28,8 @@ const App = () => (
         <LayersImplementation key="7" />,
         <ManyMasks key="8" />,
         <ManyMasksDebug key="9" />,
-        <AnOkQuestion key="10" />,
+        <Sources key="10" />,
+        <AnOkQuestion key="11" />,
       ]}
     />
   </MDXProvider>
